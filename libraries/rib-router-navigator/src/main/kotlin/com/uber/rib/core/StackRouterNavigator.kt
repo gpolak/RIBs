@@ -184,6 +184,18 @@ constructor(
     return top.state
   }
 
+  /**
+   * Returns the router immediately below the current top of the stack, without modifying the stack.
+   * Returns null if the stack has fewer than two entries. Useful for predictive back animations
+   * that need to pre-render the previous screen before the navigation commits.
+   */
+  public fun peekPreviousRouter(): Router<*>? {
+    if (navigationStack.size < 2) return null
+    val iter = navigationStack.iterator()
+    iter.next() // skip current (top)
+    return iter.next().router
+  }
+
   @IntRange(from = 0)
   override fun size(): Int {
     return navigationStack.size
