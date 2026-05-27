@@ -20,8 +20,8 @@ import com.uber.rib.core.EmptyPresenter
 import com.uber.rib.core.Interactor
 
 /**
- * Interactor for a single screen. Wires the view's button to [Listener.onPushNextScreen] and
- * cleans up on deactivation to avoid leaks.
+ * Interactor for a single screen. Wires the view's button to [Listener.onPushNextScreen] and cleans
+ * up on deactivation to avoid leaks.
  */
 class ScreenInteractor(
   private val screenNumber: Int,
