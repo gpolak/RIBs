@@ -21,8 +21,8 @@ import com.uber.rib.core.Interactor
 import com.uber.rib.stacknav.root.screen.ScreenInteractor
 
 /**
- * Orchestrates the navigation stack. Pushes the first screen on start, and reacts to each
- * screen's request to push the next one.
+ * Orchestrates the navigation stack. Pushes the first screen on start, and reacts to each screen's
+ * request to push the next one.
  */
 class RootInteractor :
   Interactor<EmptyPresenter, RootRouter>(EmptyPresenter()), ScreenInteractor.Listener {
