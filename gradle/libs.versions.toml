@@ -1,7 +1,7 @@
 [versions]
 android-api = "4.1.1.4"
 android-studio = "2023.3.1.20"
-androidx-activity = "1.9.0"
+androidx-activity = "1.13.0"
 androidx-annotation = "1.9.1"
 androidx-appcompat = "1.6.1"
 androidx-lifecycle = "2.6.2"
