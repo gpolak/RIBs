@@ -151,3 +151,7 @@
 * Restore source compatibility for Interactor
 * Add mavenCentral publishing by @psteiger in https://github.com/uber/RIBs/pull/655
 
+### Version 0.16.6
+* Add overridable `attachContent()` to `RibActivity` to allow non-RIB roots (e.g. a Compose host) while retaining lifecycle publishing and saved-state wrapping; `onSaveInstanceState` is now null-router safe by @dipanshu281 in https://github.com/uber/RIBs/pull/662
+* Add a simple stacknav demo by @gpolak in https://github.com/uber/RIBs/pull/658
+
