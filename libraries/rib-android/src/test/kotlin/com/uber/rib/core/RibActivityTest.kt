@@ -245,13 +245,15 @@ class RibActivityTest {
   }
 
   @Test
-  fun onBackPressed_whenRouterIsNull_shouldFallThroughToSuper() {
-    val activity = Robolectric.buildActivity(RootlessActivity::class.java).create(null).get()
+  fun backPress_whenRouterIsNull_shouldFallThroughToSuper() {
+    val activity = Robolectric.buildActivity(RootlessActivity::class.java).setup().get()
 
-    activity.onBackPressed()
+    // Back is dispatched through OnBackPressedDispatcher rather than the deprecated
+    // onBackPressed(), which on androidx.activity 1.13 routes through NavigationEventInput.
+    activity.onBackPressedDispatcher.onBackPressed()
 
-    // With router == null, the elvis-safe delegation returns null, which is != true,
-    // so the activity's fallback path runs (unhandled back + super.onBackPressed()).
+    // With router == null, the callback's delegation returns null, which is != true, so the
+    // fallback path runs (unhandled back + dispatcher fall-through).
     assertThat(activity.unhandledBackPressedInvocations).isEqualTo(1)
     assertThat(activity.isFinishing).isTrue()
   }
