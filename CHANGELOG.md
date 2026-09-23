@@ -2,7 +2,7 @@
 
 ### Unreleased
 
-* [Android] Support Android Predictive Back gesture. `RibActivity` now registers an `OnBackPressedCallback` instead of overriding the deprecated `onBackPressed()`. No changes required to existing interactors or routers. See [PREDICTIVE_BACK.md](PREDICTIVE_BACK.md) for opt-in instructions and migration details.
+* [Android] Support Android Predictive Back gesture. `RibActivity` now registers an `OnBackPressedCallback` instead of overriding the deprecated `onBackPressed()`. No changes required to existing interactors or routers.
 
 ### Version 0.1.0
 
